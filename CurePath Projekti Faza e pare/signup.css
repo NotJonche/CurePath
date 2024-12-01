@@ -1,0 +1,77 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    /* background-color: black; */
+    background-image: url(./photos/Gamr.jpg);
+    /* background-image: url(https://picsum.photos/id/122/0/0); */
+    color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container-signup {
+    width: 550px;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    backdrop-filter: blur(5px);
+    box-shadow: rgba(0, 0, 0, 0);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.input {
+    height: 40px;
+    width: 80%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    background-color: transparent;
+}
+
+.input::placeholder {
+    color: white;
+}
+
+#g {
+    background-color: rgb(53, 144, 147);
+    padding: 15px;
+    width: 150px;
+    border: none;
+    color: white;
+    border-radius: 2px;
+    margin-top: 15px;
+}
+
+#g:hover {
+    background-color: rgb(34, 91, 93);
+    transition: .2s;
+    cursor: pointer;
+}
+
+#name {
+    margin-top: 7px;
+}
+
+.login-href {
+    text-decoration: none;
+    color: white;
+}
+
+.login-hreff {
+    text-decoration: none;
+    color: white;
+    padding: 14px;
+    padding-left: 34px;
+    padding-right: 35px;
+}
