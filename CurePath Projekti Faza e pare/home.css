@@ -670,7 +670,7 @@ h1.aboutt {
     flex-direction: row;
     align-items: center;
     height: auto;
-    
+
 }
 
 .widhtt {
@@ -683,4 +683,50 @@ h1.aboutt {
     margin-top: 10px;
     margin-left: 60px;
     text-align: center;
+}
+
+iframe {
+    height: 500px;
+    width: 80vw;
+    margin-left: 10vw;
+    margin-right: 5vw;
+    border-radius: 25px;
+}
+
+.location-body {
+    margin-top: 20px;
+    height: 900px;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.l-top {
+    height: 80%;
+    width: max-content;
+}
+
+.l-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px;
+}
+.l-bottom h1 {
+    color: #0658b7;
+    scale: 1.2;
+    margin-left: -30px;
+}
+.l-bottom ul li {
+    list-style: none;
+    text-emphasis: none;
+    margin-top: 25px;
+    scale: 1.5;
+}
+.fa-location-pin {
+    scale: 0.7;
+}
+.l-bottom ul li a {
+    color: black;
 }
