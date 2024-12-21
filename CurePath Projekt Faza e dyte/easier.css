@@ -60,6 +60,10 @@ a {
     background-color: #4e9d45;
 }
 
+.bg-black {
+    background-color: black;
+}
+
 .color-w {
     color: white;
 }
