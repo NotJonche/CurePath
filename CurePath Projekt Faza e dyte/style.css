@@ -49,7 +49,15 @@ body {
     width: 20%;
 }
 
+.p-header1 {
+    height: 65px;
+    width: 100%;
+    top: 0;
+}
+
 .p-header0 {
+    height: 55px;
+    width: 100%;
     padding-bottom: 10px;
 }
 
@@ -58,21 +66,20 @@ body {
 }
 
 .p-logo {
-    scale: .8;
+    scale: .6;
     width: 30%;
 }
 
 .new-container ul li {
-    scale: 1.1;
     line-height: 30px;
 }
 
 .p-navbar {
-    width: 70%;
+    width: 100%;
     display: flex;
     justify-content: right;
     align-items: center;
-    margin-right: 10%;
+    padding-right: 10%;
 }
 
 #hamburger-button {
@@ -86,16 +93,15 @@ body {
     display: none;
 }
 
-#navbar-menu::after {
-    transition: .2s ease;
-}
-
-
 .slideshow-container {
     position: relative;
     max-width: 100%;
     margin-top: 30px;
     margin-bottom: 30px;
+}
+
+.new-container {
+    top: 100px;
 }
 
 .prev,
@@ -150,7 +156,7 @@ body {
 .mySlides1 {
     max-width: 100%;
     height: 600px;
-    background-image: url(./photos/about-us.jpg);
+    background-image: url(./photos/elders\ doctor.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -158,7 +164,7 @@ body {
 .mySlides2 {
     max-width: 100%;
     height: 600px;
-    background-image: url(./photos/doc1.jpg);
+    background-image: url(./photos/family-doctor.webp);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -166,8 +172,17 @@ body {
 .mySlides3 {
     max-width: 100%;
     height: 600px;
-    background-image: url(./photos/albenja.jpg);
+    background-image: url(./photos//Together.avif);
     background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.mySlides4 {
+    max-width: 100%;
+    height: 600px;
+    background-image: url(./photos//dora\ doki.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
 }
 
@@ -236,4 +251,233 @@ body {
         flex-wrap: wrap;
         background-size: cover;
     }
+
+}
+
+.servicess {
+    height: auto;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 100px;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.sv img {
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    border: 2px solid #f8f8f8;
+    box-shadow: 20px 10px 60px gray;
+}
+
+.ps {
+    scale: 1.6;
+    margin-top: 15px;
+}
+
+.fa-arrow-right {
+    scale: 1.7;
+    padding: 10px;
+    margin-top: 15px;
+}
+
+.body1 {
+    padding-top: 45px;
+    padding-bottom: 45px;
+}
+
+.footer {
+    height: 600px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.emptyf {
+    width: 20%;
+}
+
+.f-text-top {
+    height: 60%;
+}
+
+.f-text-bottom {
+    padding: 15px;
+    height: 40%;
+}
+
+.footer-main {
+    width: 80%;
+}
+
+.twidth img {
+    width: 120px;
+    height: 80px;
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+
+.twidth {
+    padding: 15px;
+    width: 100%;
+    height: 100%;
+}
+
+p.f-p {
+    line-height: 20px;
+}
+
+@media screen and (max-width:852px) {
+    .t1 {
+        padding: 0;
+    }
+
+}
+
+.twidth ul li {
+    list-style: none;
+    line-height: 25px;
+}
+
+.twidth ul {
+    margin-top: 10%;
+}
+
+.twidth h1 {
+    margin-top: 20%;
+}
+
+.aabout {
+    height: 350px;
+    width: 100%;
+}
+
+.about-text {
+    scale: 1.3;
+}
+
+.about1 {
+    width: 100%;
+    height: auto;
+    padding-top: 50px;
+}
+
+.about-content {
+    width: 50%;
+}
+
+.about-content img {
+    width: 100%;
+    height: 100%;
+    padding: 5%;
+
+    border-radius: 50px;
+}
+
+.about-content p {
+    margin-left: 35px;
+    margin-right: 35px;
+    padding: 15px;
+}
+
+.about-content h1 {
+    margin-top: 20px;
+    font-size: 50px;
+}
+
+.ab2-content {
+    margin-top: 55px;
+    width: 33%;
+    padding: 25px;
+}
+
+.ab2-content h1 {
+    margin-bottom: 35px;
+}
+
+.about3 {
+    padding: 50px 25px 50px 25px;
+}
+
+.about3 p {
+    margin-top: 20px;
+    line-height: 30px;
+}
+
+.locations-content {
+    height: 900px;
+}
+
+.l-top {
+    height: 70%;
+}
+
+.l-top iframe {
+    margin-left: 8%;
+    width: 80%;
+    height: 100%;
+}
+
+.l-bottom {
+    height: 30%;
+}
+
+.l-top iframe {
+    height: 100%;
+    width: 80%;
+    padding: 5%;
+}
+
+.l-bottom ul li a {
+    margin-left: 40%;
+    line-height: 35px;
+}
+
+.appointment-content {
+    height: 800px;
+}
+
+.appointment-top {
+    padding-top: 5%;
+    height: 90%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.appointment-bottom {
+    height: 10%;
+}
+
+.appointment-top label,
+.appointment-top input,
+.appointment-top select {
+    width: 300px;
+    height: 50px;
+    margin-left: 35px;
+    border-radius: 15px;
+    border: 0;
+}
+
+input {
+    margin-top: -25px;
+    padding-left: 5px;
+}
+
+select {
+    margin-top: -25px;
+}
+
+.butonn {
+    height: 50px;
+    border-radius: 15px;
+    width: 300px;
+    border: none;
+    margin-left: 35px;
+}
+
+.butonn p {
+    scale: 1.3;
 }
