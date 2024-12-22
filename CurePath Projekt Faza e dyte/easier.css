@@ -79,3 +79,7 @@ a {
 .color-g {
     color: #4e9d45;
 }
+.buttons:hover{
+    transition: .5s;
+    background-color: #42843b;
+}
