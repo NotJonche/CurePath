@@ -481,3 +481,79 @@ select {
 .butonn p {
     scale: 1.3;
 }
+
+.doctors {
+    padding: 50px;
+}
+
+.docs-body {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px 0 30px 0;
+}
+
+.docc {
+    width: 300px;
+    height: 300px;
+    /* gap: 50px; */
+    margin-left: 50px;
+    margin-top: 45px;
+    border-radius: 2px solid black;
+    background: #f8f8f8;
+    border-radius: 15px;
+    padding-top: 75px;
+}
+
+.doc-bottom {
+    border-top: 2px solid black;
+    padding: 15px;
+}
+
+.doc-top {
+    height: 25%;
+}
+
+.fa-user {
+    padding-bottom: 5%;
+    scale: 5;
+}
+
+.primary-body {
+    height: 500px;
+    padding: 50px 200px 50px 200px;
+}
+
+.primary-body p {
+    margin-top: 25px;
+    line-height: 25px;
+}
+
+.p-l-l {
+    width: 40%;
+}.p-l-r {
+    width: 60%;
+}
+
+.p-l-l {
+    padding-left: 150px;
+    padding-bottom: 50px;
+}
+
+.p-l-l ul li {
+    list-style: none;
+    line-height: 40px;
+}
+
+.fa-staff-snake {
+    scale: 1.6;
+    margin-right: 15px;
+}
+.p-l img {
+    padding: 50px;
+    width: 100%;
+    height: 90%;
+}
+.primary-doctors{
+    flex-wrap: wrap;
+    padding-bottom: 100px;
+}
