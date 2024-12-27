@@ -33,6 +33,12 @@ a {
     text-align: center;
     align-items: center;
 }
+.left {
+    justify-content: left;
+    text-align: left;
+    align-items: left;
+
+}
 
 .text-left {
     text-align: left;
@@ -82,4 +88,7 @@ a {
 .buttons:hover{
     transition: .5s;
     background-color: #42843b;
+}
+ul.left li {
+    line-height: 25px;
 }
