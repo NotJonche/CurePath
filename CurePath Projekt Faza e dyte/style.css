@@ -164,7 +164,7 @@ body {
 .mySlides2 {
     max-width: 100%;
     height: 600px;
-    background-image: url(./photos/family-doctor.webp);
+    background-image: url(./photos/family-doctor.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -172,7 +172,7 @@ body {
 .mySlides3 {
     max-width: 100%;
     height: 600px;
-    background-image: url(./photos//Together.avif);
+    background-image: url(./photos/TogetherForever.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
