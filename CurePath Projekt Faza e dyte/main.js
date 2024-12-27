@@ -1,9 +1,16 @@
-    const hamburgerButton = document.getElementById("hamburger-button");
-    const navbarMenu = document.getElementById("navbar-menu");
+const hamburgerButton = document.getElementById("hamburger-button");
+const navbarMenu = document.getElementById("navbar-menu");
 
-    hamburgerButton.addEventListener("click", () => {
-        navbarMenu.style.display = navbarMenu.style.display === "none" ? "block" : "none";
-    });
+hamburgerButton.addEventListener("click", () => {
+    navbarMenu.style.display = navbarMenu.style.display === "none" ? "block" : "none";
+});
+//phone
+const hamburgerButtonn = document.getElementById("hamburger-buttonn");
+const navbarMenuu = document.getElementById("navbar-menuu");
+
+hamburgerButtonn.addEventListener("click", () => {
+    navbarMenuu.style.display = navbarMenuu.style.display === "none" ? "block" : "none";
+});
 
 let slideIndex = 1;
 showSlides(slideIndex);
