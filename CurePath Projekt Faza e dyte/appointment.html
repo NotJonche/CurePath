@@ -7,6 +7,7 @@
     <title>CurePath</title>
     <link rel="icon" type="image/x-icon" href="./photos/LOGO (2).png">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylePhone.css">
     <link rel="stylesheet" href="easier.css">
     <link rel="stylesheet" href="resizing.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
@@ -15,7 +16,8 @@
 <body>
     <div class="pc">
         <div class="header0 container-row bg-blue center-items text-center">
-            <div class="adresa h0-w color-w"> 10000, Bulevardi Bill Clinton, Prishtinë</div>
+            <div class="adresa h0-w color-w"> <a href="https://tinyurl.com/437dfve8" target="_blank"
+                    class="color-w">10000, Bulevardi Bill Clinton, Prishtinë</a></div>
             <div class="nr h0-w color-w">+383-44-541-400</div>
             <div class="empty "></div>
             <div class="search h0-w color-w">Search</div>
@@ -28,8 +30,8 @@
             <div class="services h-w"><a href="Services.html" class="color-b">Services</a></div>
             <div class="locations h-w color"><a href="Locations.html" class="color-b">Locations</a></div>
             <div class="appointment h-w">
-                <button class="bg-green button-head">
-                    <a href="appointment.html" class="color-b">Make an appointment</a>
+                <button class="bg-green button-head buttons">
+                    <a href="appointment.html" class="color-w ">Make an appointment</a>
                 </button>
             </div>
         </div>
@@ -82,7 +84,7 @@
                 </div>
             </div>
             <div class="appointment-bottom center">
-                <button type="button" class="bg-green color-w butonn ">
+                <button type="button" class="bg-green color-w butonn buttons">
                     <p>Submit</p>
                 </button>
             </div>
@@ -138,7 +140,6 @@
             <div class="p-navbar">
                 <nav>
                     <button id="hamburger-button">☰</button>
-
                 </nav>
             </div>
         </div>
@@ -152,6 +153,78 @@
                 <li><a href="#" class="color-b">Search </a></li>
                 <li><a href="#" class="color-b">Login</a></li>
             </ul>
+        </div>
+        <div class="aabout container-row bg-gray center">
+            <h1 class="about-text animate__animated animate__fadeInDown color-g">Make an appointment</h1>
+        </div>
+        <div class="appointment-contentt container-column container-max bg-blue">
+            <div class="appointment-top center">
+                <div class="child-a container-column">
+                    <label for="Name" class="color-w">First Name:</label>
+                    <input type="text" name="name" id="name">
+                </div>
+                <div class="child-a container-column">
+                    <label for="lname" class="color-w">Last Name:</label>
+                    <input type="text" name="lname" id="lname">
+                </div>
+                <div class="child-a container-column">
+                    <label for="dateb" class="color-w">Date of Birth:</label>
+                    <input type="date" name="date" id="date">
+                </div>
+                <div class="child-a container-column">
+                    <label for="email" class="color-w">Email:</label>
+                    <input type="email" name="email" id="email">
+                </div>
+                <div class="child-a container-column">
+                    <label for="" class="color-w">Cell Phone (Use numbers)</label>
+                    <input type="number" name="number" id="number">
+                </div>
+                <div class="child-a container-column">
+                    <label for="gender" class="color-w">Gender:</label>
+                    <select name="Gender" id="gender">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+                <div class="child-a container-column">
+                    <label for="location" class="color-w">Preferred Location:</label>
+                    <select name="location" id="location">
+                        <option value="Prishtinë">Prishtinë</option>
+                        <option value="Tirane">Tirane</option>
+                        <option value="Peje">Peje</option>
+                        <option value="Prizren">Prizren</option>
+                        <option value="Gjakove">Gjakove</option>
+                        <option value="Mitrovice">Mitrovice</option>
+                    </select>
+                </div>
+                <div class="child-a container-column">
+                    <label for="app-date" class="color-w">Preferred appointment date</label>
+                    <input type="date" name="app-date" id="app-date">
+                </div>
+            </div>
+            <div class="appointment-bottom center" style="margin-bottom: 15px; margin-top: 25px;">
+                <button type="button" class="bg-green color-w buton buttonk">
+                    <p>Submit</p>
+                </button>
+            </div>
+            <div class="footer-phone container-max container-column bg-black center">
+                <img src="./photos/black.png" alt="" height="150px" width="200">
+                <p class="color-w" style="margin-top: 15px; line-height: 25px;">Cure Path, Inc. is a non-profit
+                    &copyorganization, established in 2025.Theorganizationis governed by a Board of Directors, with
+                    representation from each community where ourhealthcarecenters are located.</p>
+                <h1 class="color-w">Useful Links</h1>
+                <ul class="left">
+                    <li class="color-w">Privacy Policy</li>
+                    <li class="color-w">Disclaimer</li>
+                    <li class="color-w">Web Accessibility & Statement</li>
+                    <li class="color-w">Contact</li>
+                    <li class="color-w">Sitemap</li>
+                </ul>
+                <p class="color-w" style="margin-top: 15px; line-height:25px">Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Ad corporis velit earum tempore hic vitae labore, eligendi, vero, veritatis
+                    sapiente
+                    cupiditate saepe ut iusto voluptatibus repudiandae error corrupti nulla tempora?</p>
+            </div>
         </div>
     </div>
     <script src="main.js"></script>
