@@ -795,3 +795,12 @@ h1.h1-testt {
 .imaging-container {
     background-color: white;
 }
+.as {
+    width: 60%;
+    height: 100%;
+    padding-top: 18%;
+    padding-left: 5%;
+}
+.as p{
+        font-family:Georgia, 'Times New Roman', Times, serif;  
+}
