@@ -93,6 +93,10 @@ body {
     display: none;
 }
 
+#navbar-menuu {
+    display: none;
+}
+
 .slideshow-container {
     position: relative;
     max-width: 100%;
@@ -154,7 +158,9 @@ body {
 }
 
 .mySlides1 {
-    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
     height: 600px;
     background-image: url(./photos/elders\ doctor.jpg);
     background-repeat: no-repeat;
@@ -164,7 +170,7 @@ body {
 .mySlides2 {
     max-width: 100%;
     height: 600px;
-    background-image: url(./photos/family-doctor.jpg);
+    background-image: url(./photos/family-doctor.webp);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -172,7 +178,7 @@ body {
 .mySlides3 {
     max-width: 100%;
     height: 600px;
-    background-image: url(./photos/TogetherForever.jpg);
+    background-image: url(./photos//Together.avif);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -274,7 +280,7 @@ body {
 }
 
 .ps {
-    scale: 1.6;
+    font-size: 25px;
     margin-top: 15px;
 }
 
@@ -353,10 +359,6 @@ p.f-p {
 .aabout {
     height: 350px;
     width: 100%;
-}
-
-.about-text {
-    scale: 1.3;
 }
 
 .about1 {
@@ -458,6 +460,54 @@ p.f-p {
     border: 0;
 }
 
+@media screen and (max-width:427px) {
+
+    .appointment-top label,
+    .appointment-top input,
+    .appointment-top select {
+        width: 250px;
+        height: 50px;
+        margin-left: 35px;
+        border-radius: 15px;
+        border: 0;
+    }
+
+    label {
+        margin-bottom: 15px;
+    }
+
+    .buttonk {
+        width: 250px;
+        height: 50px;
+        border-radius: 15px;
+        margin-left: 35px;
+        border: 0;
+    }
+}
+@media screen and (max-width:285px) {
+
+    .appointment-top label,
+    .appointment-top input,
+    .appointment-top select {
+        width: 150px;
+        height: 50px;
+        margin-left: 35px;
+        border-radius: 15px;
+        border: 0;
+    }
+
+    label {
+        margin-bottom: 15px;
+    }
+
+    .buttonk {
+        width: 150px;
+        height: 50px;
+        border-radius: 15px;
+        margin-left: 35px;
+        border: 0;
+    }
+}
 input {
     margin-top: -25px;
     padding-left: 5px;
@@ -795,12 +845,10 @@ h1.h1-testt {
 .imaging-container {
     background-color: white;
 }
+
 .as {
     width: 60%;
     height: 100%;
     padding-top: 18%;
     padding-left: 5%;
-}
-.as p{
-        font-family:Georgia, 'Times New Roman', Times, serif;  
 }
