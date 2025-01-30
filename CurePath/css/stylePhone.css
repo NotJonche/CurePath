@@ -1,0 +1,88 @@
+* {
+    z-index: 1;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.p-index-img {
+    background-image: url(./photos/elders\ doctor.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 350px;
+    width: 100%;
+}
+
+.pb2 {
+    padding: 25px 5% 0 5%;
+}
+
+.p-index-p {
+    line-height: 30px;
+}
+
+.pb2 ul li {
+    margin-left: 15%;
+    line-height: 30px;
+}
+
+.p-reviews {
+    background-image: url(./photos/albenja.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 5px;
+}
+
+.p-reviews img {
+    border-radius: 15px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+#hamburger-buttonn {
+    border: none;
+    background-color: #f8f8f8;
+}
+
+.p-about-body {
+    padding-left: 5%;
+    padding-top: 5%;
+}
+
+.p-about-body p {
+    line-height: 25px;
+}
+
+.p-about-body h1 {
+    font-size: 25px;
+}
+
+.phoneservices {
+    height: 250px;
+    padding-top: 12%;
+}
+.about-text {
+    text-decoration: underline;
+}
+ul.left li {
+    list-style: none;
+    margin-bottom: 10px;
+}
+.appointment-contentt .child-a {
+    margin-bottom: 15px;
+}
+.appointment-topp label,
+.appointment-topp input,
+.appointment-topp select {
+    width: 200px;
+    height: 50px;
+    margin-left: 35px;
+    border-radius: 15px;
+    border: 0;
+}
+.p-primary{
+    margin-right: 50px;
+    margin-left: 50px;
+}
