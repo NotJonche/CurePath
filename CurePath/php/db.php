@@ -12,3 +12,5 @@ if ($conn->connect_error) {
     die("Lidhja dështoi: " . $conn->connect_error);
 }
 ?>
+
+.
