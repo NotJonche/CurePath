@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 
+    
 <body>
     <div class="pc">
         <div class="header0 container-row bg-blue center-items text-center">
