@@ -53,8 +53,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $result = $stmt->get_result();
 
     if ($result->num_rows === 0) {
+        echo '<div style = "display: flex; flex-direction: column; text-align: center;">';
         echo "Invalid username or password!";
-        echo '<a href="login.php" style = "margin-left : 60px;">Go back to login</a>';
+        echo '<a href="login.php" style = "margin-top : 60px;">Go back to login</a>';
+        echo '</div>';
         exit();
     }
 
