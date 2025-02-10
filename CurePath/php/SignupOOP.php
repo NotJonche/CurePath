@@ -36,49 +36,75 @@
 <body>   
 <?php
 session_start();
-include('db.php');
+include('dbOOP.php');
 
+class User {
+    private $conn;
+    private $username;
+    private $email;
+    private $password;
+    private $role;
+
+    public function __construct($conn) {
+        $this->conn = $conn;
+    }
+
+    public function register($username, $email, $password, $role = 'user', $rememberMe = false) {
+        $this->username = mysqli_real_escape_string($this->conn, $username);
+        $this->email = mysqli_real_escape_string($this->conn, $email);
+        $this->password = mysqli_real_escape_string($this->conn, $password);
+        $this->role = $role;
+
+        // Check if fields are empty
+        if (empty($this->username) || empty($this->password) || empty($this->email)) {
+            echo "All fields are required!";
+            exit();
+        }
+
+        // Insert into database
+        $query = "INSERT INTO users (username, email, password, role) VALUES (?, ?, ?, ?)";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param("ssss", $this->username, $this->email, $this->password, $this->role);
+
+        if ($stmt->execute()) { 
+            $_SESSION['username'] = $this->username;
+            $_SESSION['role'] = $this->role;
+            $_SESSION['logged_in'] = true;
+
+            // Handle "Remember Me"
+            if ($rememberMe) {
+                setcookie('username', $this->username, time() + (86400 * 30), "/");
+                setcookie('role', $this->role, time() + (86400 * 30), "/");
+                setcookie('logged_in', 'true', time() + (86400 * 30), "/");
+            }
+
+            header("Location: index.php");
+            exit();
+        } else {
+            echo "Error: " . $stmt->error;
+        }
+
+        $stmt->close();
+        mysqli_close($this->conn);
+    }
+}
+
+// Handle form submission
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $user = new User($conn);
     $username = $_POST['username'];
     $email = $_POST['email'];
-    $password = $_POST['password']; 
+    $password = $_POST['password'];
+    $role = isset($_POST['role']) && $_POST['role'] == 'admin' ? 'admin' : 'user'; // Default to 'user'
+    $rememberMe = isset($_POST['remember_me']) ? true : false;
 
-    
-    if (empty($username) || empty($password)) {
-        echo "All fields are required!";
-        exit();
-    }
-
-
-    $username = mysqli_real_escape_string($conn, $username);
-    $email = mysqli_real_escape_string($conn, $email);
-    $password = mysqli_real_escape_string($conn, $password);
-
-    $query = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')";
-
-    if (mysqli_query($conn, $query)) {
-        header("Location: index.php");
-        exit();
-    } else {
-        echo "Error: " . $query . "<br>" . mysqli_error($conn);
-    }
-
-
-    mysqli_close($conn);
-   
-    $_SESSION['username'] = $username;
-    $_SESSION['logged_in'] = true;
-
-    
-    if (isset($_POST['remember_me'])) {
-        setcookie('username', $username, time() + (86400 * 30), "/");
-        setcookie('logged_in', 'true', time() + (86400 * 30), "/");
-    }
-
-    header("Location: index.php");
-    exit();
+    $user->register($username, $email, $password, $role, $rememberMe);
 }
 ?>
+
+
+
+
     <div class="containerLogin container-column">
         <form  method="POST" class="signup">
             <h2>Sign up</h2><br><br>
@@ -98,7 +124,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             <div class="options">
                 <button type="submit" class="submit-btn">Sign Up</button><br><br>
-                <a href="Login.php">Already have an account?</a>
+                <a href="LoginOOP.php">Already have an account?</a>
             </div>
         </form> 
     </div>
