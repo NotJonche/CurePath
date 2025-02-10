@@ -16,49 +16,65 @@
 <body>
 <?php
 session_start();
-include('db.php');
+include('dbOOP.php');
+
+class Appointment {
+    private $conn;
+    private $first_name;
+    private $last_name;
+    private $date_of_birth;
+    private $email;
+    private $cell_phone;
+    private $gender;
+    private $preferred_location;
+    private $preferred_appointment_date;
+
+    public function __construct($conn, $data) {
+        $this->conn = $conn;
+        $this->first_name = mysqli_real_escape_string($conn, $data['first_name']);
+        $this->last_name = mysqli_real_escape_string($conn, $data['last_name']);
+        $this->date_of_birth = mysqli_real_escape_string($conn, $data['date_of_birth']);
+        $this->email = mysqli_real_escape_string($conn, $data['emaiil']);
+        $this->cell_phone = mysqli_real_escape_string($conn, $data['cell_phone']);
+        $this->gender = mysqli_real_escape_string($conn, $data['gender']);
+        $this->preferred_location = mysqli_real_escape_string($conn, $data['preferred_location']);
+        $this->preferred_appointment_date = mysqli_real_escape_string($conn, $data['preferred_appointment_date']);
+    }
+
+    public function save() {
+        $query = "INSERT INTO appointments (first_name, last_name, date_of_birth, emaiil, cell_phone, gender, preferred_location, preferred_appointment_date) 
+                  VALUES ('$this->first_name', '$this->last_name', '$this->date_of_birth', '$this->email', '$this->cell_phone', '$this->gender', '$this->preferred_location', '$this->preferred_appointment_date')";
+
+        if (mysqli_query($this->conn, $query)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $first_name = $_POST['first_name'];
-    $last_name = $_POST['last_name'];
-    $date_of_birth = $_POST['date_of_birth'];
-    $emaiil = $_POST['emaiil'];
-    $cell_phone = $_POST['cell_phone'];
-    $gender = $_POST['gender'];
-    $preferred_location = $_POST['preferred_location'];
-    $preferred_appointment_date = $_POST['preferred_appointment_date'];
+    $appointment = new Appointment($conn, $_POST);
 
-    $first_name = mysqli_real_escape_string($conn, $_POST['first_name']);
-    $last_name = mysqli_real_escape_string($conn, $_POST['last_name']);
-    $date_of_birth = mysqli_real_escape_string($conn, $_POST['date_of_birth']);
-    $emaiil = mysqli_real_escape_string($conn, $_POST['emaiil']);
-    $cell_phone = mysqli_real_escape_string($conn, $_POST['cell_phone']);
-    $gender = mysqli_real_escape_string($conn, $_POST['gender']);
-    $preferred_location = mysqli_real_escape_string($conn, $_POST['preferred_location']);
-    $preferred_appointment_date = mysqli_real_escape_string($conn, $_POST['preferred_appointment_date']);
-
-
-    $query = "INSERT INTO appointments (first_name, last_name, date_of_birth, email, cell_phone, gender, preferred_location, preferred_appointment_date) 
-              VALUES ('$first_name', '$last_name', '$date_of_birth', '$emaiil', '$cell_phone', '$gender', '$preferred_location', '$preferred_appointment_date')";
-
-    if (mysqli_query($conn, $query)) {
+    if ($appointment->save()) {
         echo "Takimi u rezervua me sukses!";
         header("Location: appointment.php");
         exit();
     } else {
-        echo "Error: " . $query . "<br>" . mysqli_error($conn);
+        echo "Error: " . mysqli_error($conn);
     }
 
     mysqli_close($conn);
 }
 ?>
+
     <div class="pc">
         <div class="header0 container-row bg-blue center-items text-center">
             <div class="adresa h0-w color-w"> <a href="https://tinyurl.com/437dfve8" target="_blank"
                     class="color-w">10000, Bulevardi Bill Clinton, Prishtinë</a></div>
             <div class="nr h0-w color-w">+383-44-541-400</div>
             <div class="empty "></div>
-            <div class="login h0-w"><a href="Login.php" class="color-w">Login</a></div>
+            <div class="login h0-w"><a href="LoginOOP.php" class="color-w">Login</a></div>
         </div>
         <div class="header1 container-row bg-gray center-items text-center">
             <div class="logo"><a href="index.php"><img src="../photos/LOGO (2).png" alt=""></a></div>
@@ -68,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="locations h-w color"><a href="Locations.php" class="color-b">Locations</a></div>
             <div class="appointment h-w">
                 <button class="bg-green button-head buttons">
-                    <a href="appointment.php" class="color-w ">Make an appointment</a>
+                    <a href="appointmentOOP.php" class="color-w ">Make an appointment</a>
                 </button>
             </div>
         </div>
@@ -191,7 +207,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <li><a href="Services.php" class="color-b">Services</a></li>
                 <li><a href="Locations.php" class="color-b">Locations</a></li>
                 <li><a href="appointment.php" class="color-b">Appointment</a></li>
-                <li><a href="Login.php" class="color-b">Login</a></li>
+                <li><a href="LoginOOP.php" class="color-b">Login</a></li>
             </ul>
         </div>
         <div class="aabout container-row bg-gray center">
