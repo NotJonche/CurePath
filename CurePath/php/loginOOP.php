@@ -33,52 +33,73 @@
 </head>
 
 <body>   
+
 <?php
 session_start();
-include('db.php');
+include('dbOOP.php');
 
+class UserAuth {
+    private $conn;
+
+    public function __construct($conn) {
+        $this->conn = $conn;
+    }
+
+    public function login($username, $password) {
+        if (empty($username) || empty($password)) {
+            echo "Please fill in both fields!";
+            exit();
+        }
+
+        $query = "SELECT * FROM users WHERE username = ?";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result->num_rows === 0) {
+            echo "Invalid username or password!";
+            exit();
+        }
+
+        $user = $result->fetch_assoc();
+
+        // Compare plain text password (No Hashing)
+        if ($password !== $user['password']) {
+            echo "Invalid username or password!";
+            exit();
+        }
+
+        // Store user data in session
+        $_SESSION['username'] = $user['username'];
+        $_SESSION['role'] = $user['role']; // Store role in session
+        $_SESSION['logged_in'] = true;
+
+        // Redirect based on role
+        if ($user['role'] === 'admin') {
+            header("Location: admin_dashboard.php"); // Redirect to admin page
+        } else {
+            header("Location: index.php"); // Redirect to normal user home
+        }
+        exit();
+    }
+}
+
+// Handle form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $auth = new UserAuth($conn);
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    if (empty($username) || empty($password)) {
-        echo "Please fill in both fields!";
-        exit();
-    }
-
-    $query = "SELECT * FROM users WHERE username = ?";
-    $stmt = $conn->prepare($query);
-    $stmt->bind_param("s", $username);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    if ($result->num_rows === 0) {
-        echo '<div style = "display: flex; flex-direction: column; text-align: center;">';
-        echo "Invalid username or password!";
-        echo '<a href="login.php" style = "margin-top : 60px;">Go back to login</a>';
-        echo '</div>';
-        exit();
-    }
-
-    $user = $result->fetch_assoc();
-
-    if ($password !== $user['password']) {
-        echo "Invalid username or password!" ;
-        echo '<a href="login.php">Go back to login</a>';
-        exit();
-    }
-    
-
-    $_SESSION['username'] = $username;
-    $_SESSION['logged_in'] = true;
-
-    header("Location: index.php");
-    exit();
+    $auth->login($username, $password);
 }
 ?>
+
+
+
     
     <div class="containerLogin">
-        <form class="login-form" action="login.php" method="POST" >
+        <form class="login-form" action="loginoop.php" method="POST" >
             <p class="loginwb">Welcome to CurePath <br>your guide to the best care!</p>     
              <h2>Login</h2>
             <div class="form-group emailDiv container-column">
@@ -90,7 +111,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <input type="password" id="password" name="password" placeholder="Enter your password" required>
             </div>
             <button type="submit" class="submit-btn">Login</button><br><br>
-            <a href="Signup.php">Create an account.</a>
+            <a href="SignupOOP.php">Create an account.</a>
         </form>
     </div>
     
