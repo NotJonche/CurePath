@@ -20,7 +20,7 @@
                     class="color-w">10000, Bulevardi Bill Clinton, Prishtinë</a></div>
             <div class="nr h0-w color-w">+383-44-541-400</div>
             <div class="empty "></div>
-            <div class="login h0-w"><a href="Login.php" class="color-w">Login</a></div>
+            <div class="login h0-w"><a href="LoginOOP.php" class="color-w">Login</a></div>
         </div>
         <div class="header1 container-row bg-gray center-items text-center">
             <div class="logo"><a href="index.php"><img src="../photos/LOGO (2).png" alt=""></a></div>
@@ -30,7 +30,7 @@
             <div class="locations h-w color"><a href="Locations.php" class="color-b">Locations</a></div>
             <div class="appointment h-w">
                 <button class="bg-green button-head buttons">
-                    <a href="appointment.php" class="color-w ">Make an appointment</a>
+                    <a href="appointmentOOP.php" class="color-w ">Make an appointment</a>
                 </button>
             </div>
         </div>
@@ -135,7 +135,7 @@
                 <li><a href="Services.php" class="color-b">Services</a></li>
                 <li><a href="Locations.php" class="color-b">Locations</a></li>
                 <li><a href="appointment.php" class="color-b">Appointment</a></li>
-                <li><a href="Login.php" class="color-b">Login</a></li>
+                <li><a href="LoginOOP.php" class="color-b">Login</a></li>
             </ul>
         </div>
         <div class="aabout container-row bg-gray center">
