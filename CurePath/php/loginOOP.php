@@ -64,28 +64,24 @@ class UserAuth {
 
         $user = $result->fetch_assoc();
 
-        // Compare plain text password (No Hashing)
         if ($password !== $user['password']) {
             echo "Invalid username or password!";
             exit();
         }
 
-        // Store user data in session
         $_SESSION['username'] = $user['username'];
-        $_SESSION['role'] = $user['role']; // Store role in session
+        $_SESSION['role'] = $user['role']; 
         $_SESSION['logged_in'] = true;
 
-        // Redirect based on role
         if ($user['role'] === 'admin') {
-            header("Location: admin_dashboard.php"); // Redirect to admin page
+            header("Location: admin_dashboard.php"); 
         } else {
-            header("Location: index.php"); // Redirect to normal user home
+            header("Location: index.php"); 
         }
         exit();
     }
 }
 
-// Handle form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $auth = new UserAuth($conn);
     $username = $_POST['username'];
