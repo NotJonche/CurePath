@@ -55,13 +55,11 @@ class User {
         $this->password = mysqli_real_escape_string($this->conn, $password);
         $this->role = $role;
 
-        // Check if fields are empty
         if (empty($this->username) || empty($this->password) || empty($this->email)) {
             echo "All fields are required!";
             exit();
         }
-
-        // Insert into database
+        
         $query = "INSERT INTO users (username, email, password, role) VALUES (?, ?, ?, ?)";
         $stmt = $this->conn->prepare($query);
         $stmt->bind_param("ssss", $this->username, $this->email, $this->password, $this->role);
@@ -89,13 +87,12 @@ class User {
     }
 }
 
-// Handle form submission
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $user = new User($conn);
     $username = $_POST['username'];
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $role = isset($_POST['role']) && $_POST['role'] == 'admin' ? 'admin' : 'user'; // Default to 'user'
+    $role = isset($_POST['role']) && $_POST['role'] == 'admin' ? 'admin' : 'user';
     $rememberMe = isset($_POST['remember_me']) ? true : false;
 
     $user->register($username, $email, $password, $role, $rememberMe);
