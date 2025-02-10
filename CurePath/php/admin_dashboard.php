@@ -6,7 +6,8 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['role'] !== 'admin') {
     exit();
 }
 
-echo "Welcome, Admin " . $_SESSION['username'];
+echo "Welcome Admin <br>IF YOU LEAVE THIS PAGE YOU WILL NEED TO LOG IN AGAIN TO RE-ACCESS IT" ;
+
 ?>
 
 
