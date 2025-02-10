@@ -7,7 +7,6 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['role'] !== 'admin') {
 }
 
 echo "Welcome Admin <br>IF YOU LEAVE THIS PAGE YOU WILL NEED TO LOG IN AGAIN TO RE-ACCESS IT" ;
-
 ?>
 
 
@@ -34,7 +33,8 @@ echo "Welcome Admin <br>IF YOU LEAVE THIS PAGE YOU WILL NEED TO LOG IN AGAIN TO 
                     class="color-w">10000, Bulevardi Bill Clinton, Prishtinë</a></div>
             <div class="nr h0-w color-w">+383-44-541-400</div>
             <div class="empty "></div>
-            <div class="login h0-w"><a href="Login.php" class="color-w">Login</a></div>
+            <div class="login h0-w"><a href="LoginOOP.php" class="color-w">Login</a></div>
+            <div class="login h0-w"><a href="appointment_edit.php" class="color-w">Edit appointments</a></div>
         </div>
         <div class="header1 container-row bg-gray center-items text-center">
             <div class="logo"><a href="index.php"><img src="../photos/LOGO (2).png" alt=""></a></div>
@@ -167,7 +167,7 @@ echo "Welcome Admin <br>IF YOU LEAVE THIS PAGE YOU WILL NEED TO LOG IN AGAIN TO 
                 <li><a href="Services.php" class="color-b">Services</a></li>
                 <li><a href="Locations.php" class="color-b">Locations</a></li>
                 <li><a href="appointment.php" class="color-b">Appointment</a></li>
-                <li><a href="Login.php" class="color-b">Login</a></li>
+                <li><a href="LoginOOP.php" class="color-b">Login</a></li>
             </ul>
         </div>
         <div class="aabout container-row bg-gray center">
