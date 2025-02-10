@@ -27,8 +27,6 @@ class Database {
     }
 }
 
-// Usage:
 $db = new Database();
 $conn = $db->getConnection();
-// Do operations with $conn here...
 ?>
