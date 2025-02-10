@@ -21,7 +21,7 @@
                     class="color-w">10000, Bulevardi Bill Clinton, Prishtinë</a></div>
             <div class="nr h0-w color-w">+383-44-541-400</div>
             <div class="empty "></div>
-            <div class="login h0-w"><a href="login.php" class="color-w">Login</a></div>
+            <div class="login h0-w"><a href="loginOOP.php" class="color-w">Login</a></div>
         </div>
 
         <div class="header1 container-row bg-gray center-items text-center">
@@ -184,7 +184,7 @@
                 <li><a href="Services.php" class="color-b">Services</a></li>
                 <li><a href="Locations.php" class="color-b">Locations</a></li>
                 <li><a href="appointment.php" class="color-b">Appointment</a></li>
-                <li><a href="login.php" class="color-b">Login</a></li>
+                <li><a href="loginOOP.php" class="color-b">Login</a></li>
             </ul>
         </div>
         <div class="aabout container-row bg-gray center">
